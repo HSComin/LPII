@@ -3,31 +3,29 @@ import java.util.Scanner;
 
 public class Exercicio2 {
     public static void main(String[] args) {
-
         Scanner ler = new Scanner(System.in);
 
-        int val, i, j;
-        String[] num2 = {"um", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove", "zero"};
-        String x = "";
-        char[] num1 = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+        int[] vet1 =  new int[10];
+        int[] vet2 = new int[10];
+        int[] mult = new int[10];
+        int i;
 
-        System.out.println("Digite um numero inteiro");
-        val = ler.nextInt();
+        System.out.println("Digite os 10 primeiros numeros");
 
-        for (i = 0; i < String.valueOf(val).length(); i++) {
-            char v = String.valueOf(val).charAt(i);
-            for (j = 0; j < num1.length; j++) {
-                if (num1[j] == v)
-                    if (String.valueOf(val).length() == (i + 1)) {
-                        x += num2[j];
-                    } else {
-                        x += num2[j] + ", ";
-                    }
-            }
+        for(i=0; i<10; i++){
+            System.out.println("Digite os numeros do 1 vetor");
+            vet1[i] = ler.nextInt();
         }
-        System.out.println("Resultado: " + x);
+
+        for(i=0; i<10; i++){
+            System.out.println("Digite os numeros do 2 vetor");
+            vet2[i] = ler.nextInt();
+        }
+
+        for(i=0; i<10; i++) {
+            mult[i] = (vet1[i] * vet2[i]);
+            System.out.println("Multiplicao dos vetores = " + mult[i]);
+        }
 
     }
 }
-
-

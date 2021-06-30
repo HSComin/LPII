@@ -1,24 +1,35 @@
 package LPII.Atividade2;
+
 import java.util.Scanner;
 
 public class Exercicio3 {
     public static void main(String[] args) {
-
         Scanner ler = new Scanner(System.in);
 
-        String nome, sobrenome;
-        String x = "";
-        String [] x2;
+        int[] vetor = new int[11];
         int i;
+        int x;
+        int menor;
+        int pos = 0;
 
-        System.out.println("Digite um nome");
-        nome = ler.nextLine();
-        sobrenome = nome.replaceAll(" e ", " ").replaceAll(" do ", " ").replaceAll(" da ", " ").replaceAll(" dos ", " ")
-                .replaceAll(" das ", " ").replaceAll(" de ", " ").replaceAll(" di ", " ").replaceAll(" du ", " ");
-        x2 = sobrenome.split(" ");
-        for (i = 0; i < x2.length; i++) {
-            x += x2[i].charAt(0);
+        System.out.println("Digite 10 numeros inteiros");
+
+        for(i=0; i<10; i++){
+            System.out.println("Digite o numero");
+            vetor[i] = ler.nextInt();
         }
-        System.out.println(nome + " \n Iniciais do nome = " + x.toUpperCase());
+
+            menor = vetor[0];
+            System.out.println("NUMERO:");
+
+        for(x=0; x<10; x++){
+            System.out.println(" " + vetor[x]);
+            if(vetor[x]<menor){
+                menor = vetor[x];
+                pos = x;}
+        }
+        System.out.println("Menor Elemento = " + menor);
+        System.out.println("Posicao do Elemento = " + pos);
+
     }
 }

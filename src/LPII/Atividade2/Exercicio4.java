@@ -1,26 +1,31 @@
 package LPII.Atividade2;
+
 import java.util.Scanner;
 
 public class Exercicio4 {
     public static void main(String[] args) {
-
         Scanner ler = new Scanner(System.in);
 
-        String valor;
-        String[] x;
-        int i = 0;
-        int carac = 0;
-        int pal = 0;
+        int[] vetor = new int[20];
+        int i;
+        int num;
 
-        System.out.println("Digite o texto desejado");
-        valor = ler.nextLine();
+        System.out.println("Digite 20 numeros inteiros");
 
-        for(i = 0; i < valor.length(); i++) {
-            if(valor.charAt(i) != ' ')
-                carac++;
+        for(i=0; i<20; i++){
+            System.out.println("Digite o vetor " + i);
+            vetor[i] = ler.nextInt();
         }
-        x = valor.split(" ");
-        pal = x.length;
-        System.out.println(" Caracteres = " + carac + "\n Palavras = " + pal);
+
+        for(i=0; i<10; i++){
+            num=vetor[i];
+            vetor[i]=vetor[19-i];
+            vetor[19-i]=num;
+        }
+
+        for(i=0; i<20; i++){
+            System.out.println("Novo Vetor = " +vetor[i]);
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-package LPII.Atividade1;
+package LPII.Atividade2;
 import java.util.Scanner;
 
 public class Exercicio8 {
